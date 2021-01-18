@@ -22,8 +22,15 @@ const getTodos = (resource) => {
     });
 };
 
+//chaining promises
 getTodos('todos/todos.json').then((data)=>{
-    console.log(data);//resolved
+    console.log('promise1: ', data);//resolved
+    return getTodos('todos/todos2.json');
+}).then((data)=>{
+    console.log('promise2: ', data);
+    return getTodos('todos/todos4.json');
+}).then((data)=>{
+    console.log('promise3: ', data);
 }).catch(err=>{
-    console.log(err);//rejected
+    console.log('error: ', err);//rejected
 })
