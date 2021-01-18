@@ -15,7 +15,8 @@ console.log(3);
 
 // async-await function
 const getTodos = async () => {
-    const response = await fetch('todos/todos4.json');
+    const response = await fetch('todos/todos2.json');
+    console.log(response.status);
     if(response.status!==200){
         throw new Error('Cannot fetch data');
     }
