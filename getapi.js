@@ -12,10 +12,13 @@
 // 	console.error(err);
 // });
 
-const getData = async () => {
-    const resp = await fetch("https://api.jikan.moe/v3/search/anime?q=Fate/Zero&page=1");
+const getData = async (keyword) => {
+    // const resp = await fetch("https://api.jikan.moe/v3/anime/11741");
+    // const resp = await fetch("https://api.jikan.moe/v3/search/anime?q=Fate&page=1");
+    // const resp = await fetch(`https://api.jikan.moe/v3/search/anime?q=${keyword}&page=1`);
+    const resp = await fetch("https://api.jikan.moe/v3/user/kresnofatih/animelist/all");
     // console.log(resp);
     const data = await resp.json();
-    console.log(data.results);
+    console.log(data);
 }
-getData();
+getData("horimiya");
